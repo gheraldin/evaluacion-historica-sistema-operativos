@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Evolución de los Sistemas Operativos</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: Arial, sans-serif; }
+        body {
+            background: linear-gradient(135deg, #2b0c22, #4a193c);
+            color: white;
+            min-height: 100vh;
+            padding-bottom: 50px;
+        }
+        .encabezado {
+            text-align: center;
+            padding: 50px 20px 30px;
+        }
+        h1 {
+            font-size: 42px;
+            background: linear-gradient(90deg, #f472b6, #fbbf24);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-bottom: 15px;
+        }
+        .subtitulo {
+            color: #fbcfe8;
+            font-size: 18px;
+            max-width: 600px;
+            margin: 0 auto;
+            line-height: 1.5;
+        }
+        .carrusel {
+            position: relative;
+            max-width: 900px;
+            margin: 40px auto;
+            overflow: hidden;
+            border-radius: 20px;
+            box-shadow: 0 10px 40px rgba(244,114,182,0.3);
+        }
+        .diapositiva { display: none; position: relative; }
+        .diapositiva.activa { display: block; }
+        .diapositiva img {
+            width: 100%;
+            height: 450px;
+            object-fit: cover;
+            filter: brightness(0.6);
+        }
+        .texto-sobre {
+            position: absolute;
+            bottom: 60px;
+            left: 50%;
+            transform: translateX(-50%);
+            text-align: center;
+            width: 90%;
+        }
+        .texto-sobre h2 {
+            font-size: 36px;
+            margin-bottom: 15px;
+            color: #fbcfe8;
+        }
+        .etiqueta-fechas {
+            display: inline-block;
+            background: linear-gradient(90deg, #ec4899, #f472b6);
+            padding: 12px 30px;
+            border-radius: 50px;
+            font-size: 20px;
+            font-weight: bold;
+            box-shadow: 0 4px 15px rgba(236,72,153,0.4);
+        }
+        .botones {
+            position: absolute;
+            top: 50%;
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            transform: translateY(-50%);
+            pointer-events: none;
+        }
+        .boton {
+            pointer-events: auto;
+            background: rgba(236,72,153,0.3);
+            border: none;
+            color: #fbcfe8;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            font-size: 22px;
+            cursor: pointer;
+            margin: 0 15px;
+        }
+        .puntos {
+            text-align: center;
+            padding: 15px;
+            background: rgba(74,25,60,0.5);
+        }
+        .punto {
+            height: 12px;
+            width: 12px;
+            margin: 0 6px;
+            background: #831843;
+            border-radius: 50%;
+            display: inline-block;
+            cursor: pointer;
+        }
+        .punto.activo { background: #f472b6; width: 30px; border-radius: 10px; }
+        .seccion {
+            max-width: 900px;
+            margin: 60px auto 20px;
+            padding: 0 20px;
+        }
+        .seccion h2 {
+            text-align: center;
+            font-size: 32px;
+            margin-bottom: 30px;
+            color: #fbcfe8;
+        }
+        .tarjeta {
+            background: rgba(255,255,255,0.05);
+            border-radius: 16px;
+            padding: 25px;
+            margin-bottom: 20px;
+            border-left: 4px solid #ec4899;
+        }
+        .tarjeta h3 { color: #f9a8d4; margin-bottom: 10px; }
+        .tarjeta p { color: #fbcfe8; line-height: 1.6; }
+        .enlace-boton {
+            display: inline-block;
+            margin-top: 12px;
+            padding: 10px 20px;
+            background: linear-gradient(90deg, #ec4899, #d946ef);
+            color: white;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: bold;
+            box-shadow: 0 4px 12px rgba(236,72,153,0.3);
+        }
+    </style>
+</head>
+<body>
+
+    <div class="encabezado">
+        <h1>Generaciones de Sistemas Operativos</h1>
+        <p class="subtitulo">Un recorrido histórico desde los inicios de la computación hasta la actualidad</p>
+    </div>
+
+    <!-- CARRUSEL -->
+    <div class="carrusel">
+        <div class="diapositiva activa" id="d1">
+            <img src="imagen-1.png.jpeg" alt="Primera Generación">
+            <div class="texto-sobre">
+                <h2>Primera Generación</h2>
+                <div class="etiqueta-fechas">1950 — 1960</div>
+            </div>
+        </div>
+        <div class="diapositiva" id="d2">
+            <img src="imagen-2.png.jpeg" alt="Segunda Generación">
+            <div class="texto-sobre">
+                <h2>Segunda Generación</h2>
+                <div class="etiqueta-fechas">1960 — 1970</div>
+            </div>
+        </div>
+        <div class="diapositiva" id="d3">
+            <img src="imagen-1.png.jpeg" alt="Tercera Generación">
+            <div class="texto-sobre">
+                <h2>Tercera Generación</h2>
+                <div class="etiqueta-fechas">1970 — 1980</div>
+            </div>
+        </div>
+        <div class="diapositiva" id="d4">
+            <img src="imagen-2.png.jpeg" alt="Cuarta Generación">
+            <div class="texto-sobre">
+                <h2>Cuarta Generación</h2>
+                <div class="etiqueta-fechas">1980 — 1990</div>
+            </div>
+        </div>
+        <div class="diapositiva" id="d5">
+            <img src="imagen-1.png.jpeg" alt="Quinta Generación">
+            <div class="texto-sobre">
+                <h2>Quinta Generación</h2>
+                <div class="etiqueta-fechas">1990 — Actualidad</div>
+            </div>
+        </div>
+
+        <div class="botones">
+            <button class="boton" onclick="anterior()">&#9664;</button>
+            <button class="boton" onclick="siguiente()">&#9654;</button>
+        </div>
+
+        <div class="puntos">
+            <span class="punto activo" onclick="irA(1)"></span>
+            <span class="punto" onclick="irA(2)"></span>
+            <span class="punto" onclick="irA(3)"></span>
+            <span class="punto" onclick="irA(4)"></span>
+            <span class="punto" onclick="irA(5)"></span>
+        </div>
+    </div>
+
+    <!-- CONTENIDO -->
+    <div class="seccion">
+        <h2>Explora cada generación</h2>
+
+        <div class="tarjeta">
+            <h3>🔹 Primera Generación (1950–1960)</h3>
+            <p>No existían sistemas operativos. Se programaba directamente en lenguaje máquina. Usaban tubos de vacío y tarjetas perforadas.</p>
+            <a href="primera-generacion.md" class="enlace-boton">Leer más →</a>
+        </div>
+
+        <div class="tarjeta">
+            <h3>🔹 Segunda Generación (1960–1970)</h3>
+            <p>Aparecen los transistores y sistemas por lotes. Surgen los primeros lenguajes de alto nivel.</p>
+            <a href="segunda-generacion.md" class="enlace-boton">Leer más →</a>
+        </div>
+
+        <div class="tarjeta">
+            <h3>🔹 Tercera Generación (1970–1980)</h3>
+            <p>Circuitos integrados, multiprogramación y multiusuario. Nace UNIX en 1969.</p>
+            <a href="tercera-generacion.md" class="enlace-boton">Leer más →</a>
+        </div>
+
+        <div class="tarjeta">
+            <h3>🔹 Cuarta Generación (1980–1990)</h3>
+            <p>Microprocesadores y computadoras personales. Aparecen MS-DOS, Mac OS y primeras versiones de Windows.</p>
+            <a href="cuarta-generacion.md" class="enlace-boton">Leer más →</a>
+        </div>
+
+        <div class="tarjeta">
+            <h3>🔹 Quinta Generación (1990–Actualidad)</h3>
+            <p>Interfaz gráfica, internet, dispositivos móviles, Android, iOS, computación en la nube.</p>
+            <a href="quinta-generacion.md" class="enlace-boton">Leer más →</a>
+        </div>
+
+        <div class="tarjeta">
+            <h3>✅ Conclusiones</h3>
+            <p>Resumen y aprendizaje sobre la evolución de los sistemas operativos.</p>
+            <a href="conclusiones.md" class="enlace-boton">Ver conclusiones →</a>
+        </div>
+    </div>
+
+<script>
+let actual = 1;
+function mostrar(n) {
+    document.querySelectorAll('.diapositiva').forEach(d => d.classList.remove('activa'));
+    document.querySelectorAll('.punto').forEach(p => p.classList.remove('activo'));
+    document.getElementById('d'+n).classList.add('activa');
+    document.querySelectorAll('.punto')[n-1].classList.add('activo');
+    actual = n;
+}
+function siguiente() { let s = actual+1; if(s>5)s=1; mostrar(s); }
+function anterior() { let a = actual-1; if(a<1)a=5; mostrar(a); }
+function irA(n) { mostrar(n); }
+</script>
+
+</body>
+</html>
