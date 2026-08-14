@@ -1,11 +1,11 @@
-# 💻 Evolución Histórica de los Sistemas Operativos
+💻 Evolución Histórica de los Sistemas Operativos
 
-## 📌 Presentación
+ 📌 Presentación
 Trabajo académico sobre la evolución de los Sistemas Operativos a través del tiempo, organizado por generaciones.
 
 ---
 
-## 📂 Contenido del trabajo
+ 📂 Contenido del trabajo
 
 | 🕰️ Generación | 📅 Años |
 |---|---|
@@ -17,14 +17,14 @@ Trabajo académico sobre la evolución de los Sistemas Operativos a través del 
 
 ---
 
-## 📱 Código QR
+ 📱 Código QR
 Escanea el código para acceder al sitio web:
 
 ![Código QR](nombre-de-tu-imagen.png)
 
 ---
 
-## ✍️ Conclusiones
+ ✍️ Conclusiones
 [Ver conclusiones aquí](conclusiones.md)
 
 ---
